@@ -618,7 +618,7 @@ QGCView {
                     iconSource: "/res/rtl.svg",
                     action:     _guidedController.actionRTL
                 },
-                {
+                /*{
                     name:       _guidedController.pauseTitle,
                     iconSource: "/res/pause-mission.svg",
                     action:     _guidedController.actionPause
@@ -627,7 +627,7 @@ QGCView {
                     name:       qsTr("Action"),
                     iconSource: "/res/action.svg",
                     action:     -1
-                }
+                }*/
             ]
 
             onClicked: {
