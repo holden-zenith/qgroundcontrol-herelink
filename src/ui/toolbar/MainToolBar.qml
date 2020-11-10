@@ -119,6 +119,7 @@ Rectangle {
                 exclusiveGroup:     mainActionGroup
                 source:             "/qmlimages/Plan.svg"
                 onClicked:          toolBar.showPlanView()
+                visible:            false
             }
 
             QGCToolBarButton {
