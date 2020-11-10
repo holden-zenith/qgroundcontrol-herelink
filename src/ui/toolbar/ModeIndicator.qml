@@ -64,7 +64,7 @@ Item {
         MouseArea {
             visible:        _activeVehicle && _activeVehicle.flightModeSetAvailable
             anchors.fill:   parent
-            onClicked:      flightModesMenu.popup()
+            //onClicked:      flightModesMenu.popup()
         }
     }
 }
