@@ -87,7 +87,7 @@ QGCView {
                         Layout.preferredHeight: unitsGrid.height + (_margins * 2)
                         Layout.preferredWidth:  unitsGrid.width + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                miscSectionLabel.visible
+                        visible:                unitsSectionLabel.visible
                         Layout.fillWidth:       true
 
                         GridLayout {
@@ -119,14 +119,14 @@ QGCView {
                     QGCLabel {
                         id:         miscSectionLabel
                         text:       qsTr("Miscellaneous")
-                        visible:    QGroundControl.settingsManager.appSettings.visible
+                        visible:    false  // QGroundControl.settingsManager.appSettings.visible
                     }
                     Rectangle {
                         Layout.preferredWidth:  Math.max(comboGrid.width, miscCol.width) + (_margins * 2)
                         Layout.preferredHeight: (pathRow.visible ? pathRow.y + pathRow.height : miscColItem.y + miscColItem.height)  + (_margins * 2)
                         Layout.fillWidth:       true
                         color:                  qgcPal.windowShade
-                        visible:                miscSectionLabel.visible
+                        visible:                false // miscSectionLabel.visible
 
                         Item {
                             id:                 comboGridItem
@@ -358,18 +358,18 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         id:         flyViewSectionLabel
                         text:       qsTr("Fly View")
-                        visible:    QGroundControl.settingsManager.flyViewSettings.visible
+                        visible:    false // QGroundControl.settingsManager.flyViewSettings.visible
                     }
                     Rectangle {
                         Layout.preferredHeight: flyViewCol.height + (_margins * 2)
                         Layout.preferredWidth:  flyViewCol.width + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                flyViewSectionLabel.visible
+                        visible:                false //flyViewSectionLabel.visible
                         Layout.fillWidth:       true
 
                         ColumnLayout {
@@ -413,18 +413,18 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         id:         planViewSectionLabel
                         text:       qsTr("Plan View")
-                        visible:    QGroundControl.settingsManager.planViewSettings.visible
+                        visible:    false  // QGroundControl.settingsManager.planViewSettings.visible
                     }
                     Rectangle {
                         Layout.preferredHeight: planViewCol.height + (_margins * 2)
                         Layout.preferredWidth:  planViewCol.width + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                planViewSectionLabel.visible
+                        visible:                false // planViewSectionLabel.visible
                         Layout.fillWidth:       true
 
                         ColumnLayout {
@@ -447,18 +447,18 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         id:         autoConnectSectionLabel
                         text:       qsTr("AutoConnect to the following devices")
-                        visible:    QGroundControl.settingsManager.autoConnectSettings.visible
+                        visible:    false //QGroundControl.settingsManager.autoConnectSettings.visible
                     }
                     Rectangle {
                         Layout.preferredWidth:  autoConnectCol.width + (_margins * 2)
                         Layout.preferredHeight: autoConnectCol.height + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                autoConnectSectionLabel.visible
+                        visible:                false  // autoConnectSectionLabel.visible
                         Layout.fillWidth:       true
 
                         ColumnLayout {
@@ -563,18 +563,18 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         id:         rtkSectionLabel
                         text:       qsTr("RTK GPS")
-                        visible:    QGroundControl.settingsManager.rtkSettings.visible
+                        visible:    false  // QGroundControl.settingsManager.rtkSettings.visible
                     }
                     Rectangle {
                         Layout.preferredHeight: rtkGrid.height + (_margins * 2)
                         Layout.preferredWidth:  rtkGrid.width + (_margins * 2)
                         color:                  qgcPal.windowShade
-                        visible:                rtkSectionLabel.visible
+                        visible:                false  // rtkSectionLabel.visible
                         Layout.fillWidth:       true
 
                         GridLayout {
@@ -705,7 +705,7 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         id:         videoSectionLabel
@@ -929,15 +929,17 @@ QGCView {
                         }
                     }
 
-                    Item { width: 1; height: _margins }
+                    // Item { width: 1; height: _margins }
 
                     QGCLabel {
                         text:               qsTr("%1 Version").arg(QGroundControl.appName)
                         Layout.alignment:   Qt.AlignHCenter
+                        visible:            false
                     }
                     QGCLabel {
                         text:               QGroundControl.qgcVersion
                         Layout.alignment:   Qt.AlignHCenter
+                        visible:            false
                     }
                 } // settingsColumn
             }
