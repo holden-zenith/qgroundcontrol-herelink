@@ -45,8 +45,8 @@ QGCView {
     property var    _geoFenceController:    _planMasterController.geoFenceController
     property var    _rallyPointController:  _planMasterController.rallyPointController
     property var    _activeVehicle:         QGroundControl.multiVehicleManager.activeVehicle
-    property bool   _mainIsMap:             QGroundControl.videoManager.hasVideo ? QGroundControl.loadBoolGlobalSetting(_mainIsMapKey,  true) : true
-    property bool   _isPipVisible:          QGroundControl.videoManager.hasVideo ? QGroundControl.loadBoolGlobalSetting(_PIPVisibleKey, true) : false
+    property bool   _mainIsMap:             false  // QGroundControl.videoManager.hasVideo ? QGroundControl.loadBoolGlobalSetting(_mainIsMapKey,  true) : true
+    property bool   _isPipVisible:          false  // QGroundControl.videoManager.hasVideo ? QGroundControl.loadBoolGlobalSetting(_PIPVisibleKey, true) : false
     property bool   _useChecklist:          QGroundControl.settingsManager.appSettings.useChecklist.rawValue
     property real   _savedZoomLevel:        0
     property real   _margins:               ScreenTools.defaultFontPixelWidth / 2
@@ -451,7 +451,7 @@ QGCView {
             anchors.left:       _panel.left
             anchors.bottom:     _panel.bottom
             anchors.margins:    ScreenTools.defaultFontPixelHeight
-            visible:            QGroundControl.videoManager.hasVideo && !QGroundControl.videoManager.fullScreen && _flightVideo.state != "popup"
+            visible:            false  // QGroundControl.videoManager.hasVideo && !QGroundControl.videoManager.fullScreen && _flightVideo.state != "popup"
             isHidden:           !_isPipVisible
             isDark:             isBackgroundDark
             enablePopup:        _mainIsMap
